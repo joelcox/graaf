@@ -1,0 +1,8 @@
+{
+	"name": "Graaf",
+	"version": "0.1.0",
+	"devDependencies" :
+    	{ "jasmine-node" : "1.0.26" },
+    "scripts":
+    	{ "test": "make test"}
+}

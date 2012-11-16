@@ -1,0 +1,6 @@
+[submodule "lib/underscore"]
+	path = lib/underscore
+	url = git://github.com/documentcloud/underscore.git
+[submodule "lib/raphael"]
+	path = lib/raphael
+	url = git://github.com/DmitryBaranovskiy/raphael.git

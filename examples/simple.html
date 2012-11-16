@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Graaf example</title>
+		<script src="../lib/underscore/underscore-min.js"></script>
+		<script src="../lib/raphael/raphael-min.js"></script>
+		<script src="../graaf.js"></script>
+	</head>
+
+	<body>
+
+		<div id="container" style="width: 100%; height 100%"></div>
+
+		<script>
+
+			var net = new Graaf.Network();
+
+			net.addNode(new Graaf.Node('@dana').to('@joelcox'));
+			net.addNode(new Graaf.Node('@joelcox').to(['@bert', '@bob']));
+			net.addNode(new Graaf.Node('@bert'));
+			net.addNode(new Graaf.Node('@bob'));
+
+			net.draw(new Raphael(document.getElementById('container'), 500, 400));
+
+		</script>
+
+	</body>
+</html>
