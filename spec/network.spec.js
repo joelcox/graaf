@@ -1,35 +1,24 @@
 var Graaf = require('../graaf.js').Graaf;
 
-describe('A node', function(){
+describe('A network', function() {
 
-	var node = new Graaf.Node('foo');
+	var net = new Graaf.Network();
 
 	it('is an object', function() {
-		expect(typeof node).toEqual('object');
+		expect(typeof net).toEqual('object');
 	});
 
-	it('its initial identifier is `foo`', function(){
-		expect(node.id).toEqual('foo');
+	net.addNode(new Graaf.Node('foo'));
+
+	it('can have a node', function() {
+		expect(typeof net.nodes.foo).toEqual('object');
 	});
 
-	node.to('bar');
-
-	it('can have an outgoing edge', function() {
-		expect(node._to[0]).toEqual('bar');
-	});
-
-	it('can\'t have multiple edges to the same node', function() {
+	it('can\'t have nodes replaced implicitly', function() {
 		expect(function() {
-			node.to('bar');
-		}).toThrow('There already is an edge to this identifer.');
-	});
+			net.addNode(new Graaf.Node('foo'))
+		}).toThrow('There already is a node with this identifer please use \
+`replaceNode` to explicitly replace a node.')
+	})
 
-	node.to(['spam', 'eggs']);
-	it('can have mutlitple edges added to it', function() {
-		expect(node._to.length).toEqual(3);
-	});
-
-	it('allows you to chain the `to` method', function() {
-		expect(typeof new Graaf.Node('foo').to('bar')).toEqual('object');
-	});
 });
