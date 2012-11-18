@@ -19,6 +19,6 @@ describe('A network', function() {
 			net.addNode(new Graaf.Node('foo'))
 		}).toThrow('There already is a node with this identifer please use \
 `replaceNode` to explicitly replace a node.')
-	})
+	});
 
 });

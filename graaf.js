@@ -100,6 +100,15 @@ please use `replaceNode` to explicitly replace a node.");
 
 	}
 
+	// General utilities
+	G.utils = {
+		// Calculate the Euclidean distance between two nodes
+		distance: function(p, q) {
+			return Math.sqrt(Math.pow((p.x - q.x), 2) + Math.pow((p.y - q.y), 2));
+		}
+	}
+
+
 	// Assign it to the window DOM object
 	if (typeof window !== 'undefined') {
 		window.Graaf = G;
