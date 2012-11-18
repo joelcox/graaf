@@ -29,12 +29,7 @@ describe('Force Atlas 2', function() {
 
 			// Set up a node with degree two, plus a proxy for the center
 			var n1 = new Graaf.Node('foo').to(['spam', 'eggs']);
-			n1.x = 0;
-			n1.y = 0;
-
-			var center = new Graaf.Node();
-			center.x = 10;
-			center.y = 5;
+			var center = new Graaf.Node().at(10, 5);
 
 			expect(Graaf.ForceAtlas2.gravity(n1, 1, center))
 				.toEqual(33.54101966249685);
