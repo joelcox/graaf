@@ -33,6 +33,16 @@ describe('A node', function() {
 		expect(node.degree()).toEqual(3);
 	});
 
+	it('can be positioned using', function() {
+		node.at(10, 5);
+		expect(node.x).toEqual(10);
+		expect(node.y).toEqual(5);
+	});
+
+	it('allows you to chain the `at` method', function() {
+		expect(typeof new Graaf.Node('foo').at(3, 10)).toEqual('object');
+	});
+
 	it('allows you to chain the `to` method', function() {
 		expect(typeof new Graaf.Node('foo').to('bar')).toEqual('object');
 	});

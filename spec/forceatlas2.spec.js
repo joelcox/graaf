@@ -2,7 +2,7 @@ var Graaf = require('../graaf.js').Graaf;
 
 describe('Force Atlas 2', function() {
 
-	describe('has utility function that', function() {
+	describe('has an utility function that', function() {
 
 		it('can calculate the gravity on a node (F_g)', function() {
 
@@ -12,8 +12,8 @@ describe('Force Atlas 2', function() {
 
 		});
 
-		it('can calculate the gravity on a node (F_g) with variable ' +
-			'gravity constant', function() {
+		it('can calculate the gravity on a node (F_g) with a variable ' +
+			'gravitational constant', function() {
 
 			// Gravitational constant
 			var gravitationalConst = 3.0;

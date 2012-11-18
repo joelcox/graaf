@@ -44,17 +44,28 @@ please use `replaceNode` to explicitly replace a node.");
 		this.id = id;
 		this.radius = 15;
 		this._to = [];
-		this._between = []
-		this._from = []
+		this.x = 0;
+		this.y = 0;
+
 		return this;
 	}
 
 	G.Node.prototype = {
+
+		// Allows you to specify the position of the node
+		at: function(x, y) {
+			this.x = x;
+			this.y = y;
+			return this;
+		},
+
+		// Specify a set of connected nodes by their identifier
 		to: function(identifier) {
 			this._identifierToEdge('_to', identifier);
 			return this;
 		},
 
+		// Return the degree count of incoming and outgoign node
 		degree: function() {
 			return this._to.length;
 		},
