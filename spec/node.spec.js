@@ -29,6 +29,10 @@ describe('A node', function() {
 		expect(node._to.length).toEqual(3);
 	});
 
+	it('has a degree', function() {
+		expect(node.degree()).toEqual(3);
+	});
+
 	it('allows you to chain the `to` method', function() {
 		expect(typeof new Graaf.Node('foo').to('bar')).toEqual('object');
 	});

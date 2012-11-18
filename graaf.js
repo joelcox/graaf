@@ -55,6 +55,10 @@ please use `replaceNode` to explicitly replace a node.");
 			return this;
 		},
 
+		degree: function() {
+			return this._to.length;
+		},
+
 		// Adds the edges to to the correct array
 		_identifierToEdge: function(type, id) {
 			if (_.isArray(id)) {
@@ -97,6 +101,19 @@ please use `replaceNode` to explicitly replace a node.");
 				});
 			});
 		},
+
+	}
+
+	G.ForceAtlas2 = {
+
+		gravity: function(node, gravityConst, centerNode) {
+			if (typeof gravityConst === 'undefined') gravityConst = 1;
+			var nodeGravity = gravityConst * (node.degree() + 1);
+
+			// If the center node is defined we're calculating 'strong' grav.
+			if (typeof centerNode === 'undefined') return nodeGravity;
+			return G.utils.distance(node, centerNode) * nodeGravity;
+		}
 
 	}
 

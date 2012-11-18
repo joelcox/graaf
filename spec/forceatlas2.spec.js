@@ -4,7 +4,7 @@ describe('Force Atlas 2', function() {
 
 	describe('has utility function that', function() {
 
-		describe('can calculate the gravity on a node (F_g)', function() {
+		it('can calculate the gravity on a node (F_g)', function() {
 
 			// Set up a node with degree two
 			var n1 = new Graaf.Node('foo').to(['spam', 'eggs']);
@@ -12,7 +12,7 @@ describe('Force Atlas 2', function() {
 
 		});
 
-		describe('can calculate the gravity on a node (F_g) with variable ' +
+		it('can calculate the gravity on a node (F_g) with variable ' +
 			'gravity constant', function() {
 
 			// Gravitational constant
@@ -24,16 +24,20 @@ describe('Force Atlas 2', function() {
 
 		});
 
-		describe('can calculate the \'strong\' gravity on a node (F_g)',
+		it('can calculate the \'strong\' gravity on a node (F_g)',
 			function() {
 
 			// Set up a node with degree two, plus a proxy for the center
 			var n1 = new Graaf.Node('foo').to(['spam', 'eggs']);
+			n1.x = 0;
+			n1.y = 0;
+
 			var center = new Graaf.Node();
 			center.x = 10;
 			center.y = 5;
 
-			expect(Graaf.ForceAtlas2.gravity(n1, 1, center)).toEqual(9);
+			expect(Graaf.ForceAtlas2.gravity(n1, 1, center))
+				.toEqual(33.54101966249685);
 
 		});
 
