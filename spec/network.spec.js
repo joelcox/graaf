@@ -17,8 +17,8 @@ describe('A network', function() {
 	it('can\'t have nodes replaced implicitly', function() {
 		expect(function() {
 			net.addNode(new Graaf.Node('foo'))
-		}).toThrow('There already is a node with this identifer please use \
-`replaceNode` to explicitly replace a node.')
+		}).toThrow('There already is a node with this identifer please use ' +
+		'`replaceNode` to explicitly replace a node.')
 	});
 
 });

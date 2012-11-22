@@ -13,8 +13,8 @@
 		addNode: function(node) {
 			// Don't allow overwriting of nodes implicitly
 			if (_.has(this.nodes, node.id)) {
-				throw new Error("There already is a node with this identifer \
-please use `replaceNode` to explicitly replace a node.");
+				throw new Error('There already is a node with this identifer ' +
+				'please use `replaceNode` to explicitly replace a node.');
 			}
 
 			this.nodes[node.id] = node;
@@ -77,7 +77,7 @@ please use `replaceNode` to explicitly replace a node.");
 			} else {
 				// Only add the adge if it isn't already in the list
 				if (this[type].indexOf(id) >= 0) {
-					throw new Error("There already is an edge to this identifer.");
+					throw new Error('There already is an edge to this identifer.');
 				}
 				this[type].push(id);
 			}
