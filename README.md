@@ -10,7 +10,7 @@ Dependencies
 
 In order to use Graaf in your projects you'll need both [Underscore.js](http://underscorejs.org) (1.4.2) and Raphaël (2.1.0).
 
-If you want to work on Graaf you'll need to have Node.js (both 0.6.x and 0.8.x should work) installed, together with NPM. Graaf uses [Jasmine](http://pivotal.github.com/jasmine/) for its tests, via `jasmine-node`. 
+If you want to work on Graaf you'll need to have Node.js (both 0.6.x and 0.8.x should work) installed, together with NPM. Graaf uses [Jasmine](https://jasmine.github.io/) for its tests, via `jasmine-node`. 
 
 
 Contributing
